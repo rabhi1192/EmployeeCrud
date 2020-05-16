@@ -1,0 +1,77 @@
+<h5><span class="badge badge-light ">Selling Details: </span>  {{sellingDetails.selling_date}}</h5>
+<div [hidden]="submitted">
+    <form #sellingDetailForm="ngForm">
+      <div class="form-group">
+        <label for="selling_date">Selling Date</label>
+        <input type="text" class="form-control" id="selling_date" required
+        [(ngModel)]="sellingDetails.selling_date" name="selling_date" #selling_date="ngModel">
+        <div [hidden]="selling_date.valid || selling_date.pristine"
+             class="alet alert-danger">
+             Selling Date is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="volume">Selling Volume</label>
+        <input type="text" class="form-control" id="volume" required
+        [(ngModel)]="sellingDetails.volume" name="volume" #volume="ngModel">
+        <div [hidden]="volume.valid || volume.pristine"
+             class="alert alert-danger">
+             volume is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rate">Rate</label>
+        <input type="rate" class="form-control" id="rate" required
+        [(ngModel)]="sellingDetails.rate" name="rate" #rate="ngModel">
+        <div [hidden]="rate.valid || rate.pristine"
+             class="alert alert-danger">
+             rate is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sold_to">Sold To</label>
+        <input type="text" class="form-control" id="sold_to" required
+        [(ngModel)]="sellingDetails.sold_to" name="sold_to" #sold_to="ngModel">
+        <div [hidden]="sold_to.valid || sold_to.pristine"
+             class="alert alert-danger">
+             Sold To is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="remarks">Remarks</label>
+        <input type="text" class="form-control" id="remarks" required
+        [(ngModel)]="sellingDetails.remarks" name="remarks" #remarks="ngModel">
+        <div [hidden]="remarks.valid || remarks.pristine"
+             class="alert alert-danger">
+             Remarks is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sales_incharge">Sales Incharge</label>
+        <input type="text" class="form-control" id="sales_incharge" required
+        [(ngModel)]="sellingDetails.sales_incharge" name="sales_incharge" #sales_incharge="ngModel">
+        <div [hidden]="sales_incharge.valid || sales_incharge.pristine"
+             class="alert alert-danger">
+             Sales Incharge is required
+        </div>
+      </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-dark" (click)="update()" [disabled]="!sellingDetailForm.form.valid">Update</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-dark" (click)="delete()">Delete</button>
+	    </div>
+    </form>
+</div>
+ 
+<div [hidden]="!submitted">
+    <p>{{message}}</p>
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    </div>
+</div>

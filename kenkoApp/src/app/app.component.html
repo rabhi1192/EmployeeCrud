@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">  
+      <div><img src="../assets/logo.png"/></div>
+      <h1>Customer Sales Record</h1>
+      <ul class="nav justify-content-center">
+          <li class="nav-item">
+              <a routerLink="customers" class="btn btn-light btn-sm" role="button" routerLinkActive="active">Retrieve</a> 
+          </li>&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+              <a routerLink="customer/add" class="btn btn-light btn-sm" role="button" routerLinkActive="active">Create</a>
+          </li>&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+              <a routerLink="sellingDetails" class="btn btn-light btn-sm" role="button" routerLinkActive="active">Selling Details Retrive</a>
+          </li>&nbsp;&nbsp;&nbsp;
+          <li class="nav-item">
+              <a routerLink="sellingDetails/add" class="btn btn-light btn-sm" role="button" routerLinkActive="active">Selling Details Create</a>
+          </li>
+      </ul>
+      <hr>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

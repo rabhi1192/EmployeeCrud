@@ -1,0 +1,28 @@
+<h5>All Selling Details</h5>
+<div *ngFor="let sale of sellingDetails; let rowIndex=index">
+  <a [routerLink]="['/sellingDetails', sale._id]" style="color:black"><span class="badge badge-dark">{{rowIndex + 1}}</span> -> {{sale.selling_date}}</a>
+</div>
+<div class="container">           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Selling Date</th>
+        <th>Volume</th>
+        <th>Rate</th>
+        <th>Sold To</th>
+        <th>Remarks</th>
+        <th>Sales Person</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sale of sellingDetails;" [routerLink]="['/sellingDetails', sale._id]">
+        <td>{{sale.selling_date}}</td>
+        <td>{{sale.volume}}</td>
+        <td>{{sale.rate}}</td>
+        <td>{{sale.sold_to}}</td>
+        <td>{{sale.remarks}}</td>
+        <td>{{sale.sales_incharge}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,89 @@
+<h3>Add Selling Details</h3>
+<div [hidden]="submitted">
+    <form #addSellingDetailsForm="ngForm">
+
+      <div class="form-group">
+        <label for="selling_date">Selling Date</label>
+        <input type="text" class="form-control" id="selling_date" placeholder="Give Selling Details selling Date" 
+        required
+        [(ngModel)]="sellingDetails.selling_date" name="selling_date" #selling_date="ngModel">
+        <div [hidden]="selling_date.valid || selling_date.pristine"
+             class="alert alert-danger">
+             Selling Date is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="volume">Selling Volume</label>
+        <input type="text" class="form-control" id="volume" placeholder="Give Selling Details volume"
+        required
+        [(ngModel)]="sellingDetails.volume" name="volume" #volume="ngModel">
+        <div [hidden]="volume.valid || volume.pristine"
+             class="alert alert-danger">
+             volume is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="rate">Rate</label>
+        <input type="rate" class="form-control" id="rate" 
+        placeholder="Give Selling Details rate"
+        required
+        [(ngModel)]="sellingDetails.rate" name="rate" #rate="ngModel">
+        <div [hidden]="rate.valid || rate.pristine"
+             class="alert alert-danger">
+             Rate is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="sold_to">Sold To</label>
+        <input type="text" class="form-control" id="sold_to" 
+        placeholder="Give Sold To Details"
+        required
+        [(ngModel)]="sellingDetails.sold_to" name="sold_to" #sold_to="ngModel">
+        <div [hidden]="sold_to.valid || sold_to.pristine"
+             class="alert alert-danger">
+             Sold  to is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="remarks">Remarks</label>
+        <input type="text" class="form-control" id="remarks" 
+        placeholder="Give Remarks for Selling Details"
+        required
+        [(ngModel)]="sellingDetails.remarks" name="remarks" #remarks="ngModel">
+        <div [hidden]="remarks.valid || remarks.pristine"
+             class="alert alert-danger">
+             Remarks is required
+        </div>
+       </div>
+
+       <div class="form-group">
+        <label for="sales_incharge">Sales Incharge</label>
+        <input type="text" class="form-control" id="sales_incharge" 
+        placeholder="Give Sales Incharge for Selling Details"
+        required
+        [(ngModel)]="sellingDetails.sales_incharge" name="sales_incharge" #sales_incharge="ngModel">
+        <div [hidden]="sales_incharge.valid || sales_incharge.pristine"
+             class="alert alert-danger">
+             Sales Incharge is required
+        </div>
+       </div>
+      
+      
+      <div class="btn-group btn-group-sm">
+      	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>&nbsp; &nbsp;
+      	<button type="button" class="btn btn-dark" (click)="addSellingDetails()" [disabled]="!addSellingDetailsForm.form.valid">Add</button>
+      </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+  <p>Submitted Successfully! -> <span class="badge badge-light">{{sellingDetails.sold_to}}  {{sellingDetails.sellingDate}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<button type="button" class="btn btn-dark" (click)="goBack()">Back</button>&nbsp; &nbsp;
+    	<button type="button" class="btn btn-dark" (click)="newSellingDetails(); addSellingDetailsForm.reset()">Continue</button>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<h5>All Customers</h5>
+<div *ngFor="let cust of customers; let rowIndex=index">
+  <a [routerLink]="['/customers', cust._id]" style="color:black"><span class="badge badge-dark">{{rowIndex + 1}}</span> -> {{cust.firstname}}</a>
+</div>
+<div class="container">           
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Mobile No</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cust of customers;" [routerLink]="['/customers', cust._id]">
+        <td>{{cust.firstname}}</td>
+        <td>{{cust.lastname}}</td>
+        <td>{{cust.email}}</td>
+        <td>{{cust.address}}</td>
+        <td>{{cust.mobile_no}}</td>
+        <td>{{cust.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
